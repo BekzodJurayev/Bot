@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 2004
+    driverClassName: org.postgresql.Driver
+bot:
+  username: sample_purpose_bot
+  token: 6985435233:AAGxWPkojKZHJsZ5um8k_gkeb1J3XG3O9WY
