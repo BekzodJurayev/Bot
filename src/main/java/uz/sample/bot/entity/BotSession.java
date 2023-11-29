@@ -30,4 +30,7 @@ public class BotSession {
     private String lastName;
 
     private String userName;
+
+    @ManyToOne
+    private Account account;
 }

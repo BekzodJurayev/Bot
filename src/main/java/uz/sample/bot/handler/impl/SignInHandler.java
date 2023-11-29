@@ -1,23 +1,22 @@
 package uz.sample.bot.handler.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import uz.sample.bot.handler.UpdateHandler;
 import uz.sample.bot.model.BotUpdate;
 import uz.sample.bot.model.enums.Page;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 @Component
 @RequiredArgsConstructor
-public class SignInPageHandler implements UpdateHandler {
+public class SignInHandler implements UpdateHandler {
+    private static final Logger _logger = LoggerFactory.getLogger(SignInHandler.class);
     private static final String LANDING_STATE_NAME = "";
     @Override
     public Page getPage() {
@@ -38,6 +37,11 @@ public class SignInPageHandler implements UpdateHandler {
 
     @Override
     public BotApiMethod<?> process(@NonNull BotUpdate update) {
+        try {
+
+        } catch (Exception e) {
+
+        }
         return new SendMessage(update.getSession().getChatId().toString(), "Sign in page");
     }
 }

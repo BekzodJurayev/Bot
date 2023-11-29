@@ -8,7 +8,6 @@ import uz.sample.bot.entity.BotSession;
 import uz.sample.bot.model.enums.Page;
 import uz.sample.bot.repository.BotSessionRepository;
 import uz.sample.bot.service.BotSessionService;
-import uz.sample.bot.service.HistoryService;
 import uz.sample.bot.service.StateService;
 
 import java.util.Objects;
@@ -18,7 +17,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class BotSessionServiceImpl implements BotSessionService {
     private final BotSessionRepository sessionRepository;
-    private final HistoryService historyService;
     private final StateService stateService;
 
     @Override
@@ -59,7 +57,6 @@ public class BotSessionServiceImpl implements BotSessionService {
 
     @Override
     public void saveBotSession(@NonNull BotSession session) {
-        historyService.considerSession(session);
         sessionRepository.save(session);
     }
 }

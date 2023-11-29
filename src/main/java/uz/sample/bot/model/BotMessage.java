@@ -8,5 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class BotMessage {
+    private Integer id;
     private String text;
 }

@@ -35,10 +35,13 @@ public class Facade {
         BotSession session = findBotSession(update);
 
         BotMessage message = update.hasMessage() ? BotMessage.builder()
+                .id(update.getMessage().getMessageId())
                 .text(update.getMessage().getText())
                 .build() : null;
 
         BotCallBackQuery callBackQuery = update.hasCallbackQuery() ? BotCallBackQuery.builder()
+                .messageId(update.getCallbackQuery().getMessage().getMessageId())
+                .callbackData(update.getCallbackQuery().getData())
                 .build() : null;
 
         return BotUpdate.builder()
